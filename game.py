@@ -7,12 +7,15 @@ def create_player(name: str):
 def star_game():
     player1 = create_player("yosi")
     player2 = create_player("shalom")
+    return [player1, player2]
 
 
 def play_game(player):
-    player_decision = input("please enter your game \n")
+    player_decision = input("choose your game \n")
     while not utils.turn_decision(player_decision):
-        player_decision = input("please enter your game \n")
+        player_decision = input("choose your game (r or p)\n")
     if player_decision == "r":
-        tupl_dice = roll_two_d6()
-        sum1 = sum_roll(player["sum_dice"])
+        tupl_dice = utils.roll_two_d6()
+        sum1 = utils.sum_roll(tupl_dice, player["sum_dice"])
+        if utils.is_bust():
+            pass
