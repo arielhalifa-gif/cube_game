@@ -22,7 +22,15 @@ def closer_to_target(a: int, b: int, target: int = 100) -> int | None:
         return 1
     else:
         return
+    
 
+def sum_roll(dice: tuple, sum_before: int) -> int:
+    sum_dice = dice[0] + dice[1]
+    return sum_before + sum_dice
 
-def tie_breaker(roller) -> int:
+def turn_decision(input_fn):
+    if input_fn == "r" or input_fn == "p":
+        return True
+    else:
+        return False
     
